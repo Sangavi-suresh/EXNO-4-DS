@@ -167,102 +167,15 @@ print(confusionMatrix)
 
 
 ````
+
 accuracy_score=accuracy_score(test_y,prediction)
 print(accuracy_score)
+
 ```
 
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/1e49508b-dcf6-4117-81db-63429621690c)
 
 
-```
-print("Misclassified Samples : %d" % (test_y !=prediction).sum())
-```
 
-![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/e98d96d8-ffed-4cbc-b4bc-8172e87ac773)
-
-
-```
-
-data.shape
-```
-
-![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/8c413662-aabf-4deb-bfd9-414691f3c6be)
-
-
-```
-
-
-import pandas as pd
-from sklearn.feature_selection import SelectKBest, mutual_info_classif, f_classif
-data={
-    'Feature1': [1,2,3,4,5],
-    'Feature2': ['A','B','C','A','B'],
-    'Feature3': [0,1,1,0,1],
-    'Target'  : [0,1,1,0,1]
-}
-
-df=pd.DataFrame(data)
-x=df[['Feature1','Feature3']]
-y=df[['Target']]
-
-selector=SelectKBest(score_func=mutual_info_classif,k=1)
-x_new=selector.fit_transform(x,y)
-
-selected_feature_indices=selector.get_support(indices=True)
-
-selected_features=x.columns[selected_feature_indices]
-print("Selected Features:")
-print(selected_features)
-
-```
-
-![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/3404837d-1531-43c6-8b3c-21689651877c)
-
-
-```
-
-import pandas as pd
-import numpy as np
-from scipy.stats import chi2_contingency
-
-import seaborn as sns
-tips=sns.load_dataset('tips')
-tips.head()
-
-```
-
-![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/32dea7f3-4631-4a37-aae9-ecddda0e5865)
-
-
-```
-tips.time.unique()
-```
-
-
-![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/448346e7-624d-4f34-b73e-b0e6c7a18ac1)
-
-
-```
-
-contingency_table=pd.crosstab(tips['sex'],tips['time'])
-print(contingency_table)
-
-```
-
-
-![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/cc1bba00-61e8-494e-bc76-a1da820a66cb)
-
-
-```
-
-chi2,p,_,_=chi2_contingency(contingency_table)
-print(f"Chi-Square Statistics: {chi2}")
-print(f"P-Value: {p}")
-
-```
-
-
-![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/a6b3ad61-0a79-42d7-a281-e196f643fbe2)
-    
 # RESULT:
        # INCLUDE YOUR RESULT HERE
