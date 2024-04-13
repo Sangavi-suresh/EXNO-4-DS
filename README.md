@@ -167,10 +167,10 @@ print(confusionMatrix)
 
 
 
-
+```
 accuracy_score=accuracy_score(test_y,prediction)
 print(accuracy_score)
-
+```
 
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/1e49508b-dcf6-4117-81db-63429621690c)
 
