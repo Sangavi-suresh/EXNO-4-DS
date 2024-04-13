@@ -180,5 +180,45 @@ print("Misclassified Samples : %d" % (test_y !=prediction).sum())
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/daaef5b9-7473-4547-91c7-6b8d95b48156)
 
 
+data.shape
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/59090e8d-a449-48ed-9ce3-1c32358c7096)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # RESULT:
        # INCLUDE YOUR RESULT HERE
