@@ -44,16 +44,6 @@ data
 
 ```
 
-```
-
-data.isnull().sum()
-
-```
-
-```
-![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/e35a841d-6b21-4020-884f-80d08988b8ae)
-
-```
 
 
 
