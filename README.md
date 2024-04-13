@@ -167,7 +167,6 @@ print(confusionMatrix)
 
 
 ````
-
 accuracy_score=accuracy_score(test_y,prediction)
 print(accuracy_score)
 ```
@@ -176,7 +175,6 @@ print(accuracy_score)
 
 
 ```
-
 print("Misclassified Samples : %d" % (test_y !=prediction).sum())
 ```
 
