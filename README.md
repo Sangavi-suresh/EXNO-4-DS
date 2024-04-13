@@ -175,6 +175,10 @@ print(accuracy_score)
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/1e49508b-dcf6-4117-81db-63429621690c)
 
 
+print("Misclassified Samples : %d" % (test_y !=prediction).sum())
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/daaef5b9-7473-4547-91c7-6b8d95b48156)
+
 
 # RESULT:
        # INCLUDE YOUR RESULT HERE
