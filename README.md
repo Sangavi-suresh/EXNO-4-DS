@@ -214,7 +214,15 @@ print(selected_features)
 
 
 
+import pandas as pd
+import numpy as np
+from scipy.stats import chi2_contingency
 
+import seaborn as sns
+tips=sns.load_dataset('tips')
+tips.head()
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/29848070-de88-41fc-90fa-21f5cbd81a32)
 
 
 
