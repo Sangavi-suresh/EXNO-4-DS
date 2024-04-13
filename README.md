@@ -213,7 +213,7 @@ print(selected_features)
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/1eda0745-57f9-4efd-9b7c-fd4cf1dd052d)
 
 
-
+```
 import pandas as pd
 import numpy as np
 from scipy.stats import chi2_contingency
@@ -221,6 +221,7 @@ from scipy.stats import chi2_contingency
 import seaborn as sns
 tips=sns.load_dataset('tips')
 tips.head()
+```
 
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/29848070-de88-41fc-90fa-21f5cbd81a32)
 
