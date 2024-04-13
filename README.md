@@ -25,7 +25,7 @@ The feature selection techniques used are:
 
 # CODING AND OUTPUT:
 
-```
+
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -37,13 +37,11 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 data=pd.read_csv("/content/income(1) (1).csv",na_values=[ " ?"])
 data
 
-```
 
-```
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/09cec392-423e-4d11-ac94-d9ff0a36a502)
 
 
-```
+
 
 
 
