@@ -48,38 +48,223 @@ data.isnull().sum()
 
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/dd0b24a8-db5f-4d35-80cf-bd22e12c8aca)
 
+```
+
+missing=data[data.isnull().any(axis=1)]
+missing
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/f97d32d8-f6f4-4f42-9c78-5555cd8a9803)
 
 
+```
+
+data2=data.dropna(axis=0)
+data2
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/72bb8410-6b47-413c-ad3f-17ef945e24b0)
 
 
+```
+sal=data["SalStat"]
+
+data2["SalStat"]=data["SalStat"].map({' less than or equal to 50,000':0,' greater than 50,000':1})
+print(data2['SalStat'])
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/6b7a3a68-c985-4490-a956-472fdb4d59f2)
 
 
+```
+sal2=data2['SalStat']
+
+dfs=pd.concat([sal,sal2],axis=1)
+dfs
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/1e8f8f7e-a502-4235-b6da-6924f3a8cb8e)
 
 
+```
+
+data2
+
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/94718a8e-302d-4b80-9365-3dd58768b00a)
 
 
+```
+new_data=pd.get_dummies(data2, drop_first=True)
+new_data
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/a24cc11f-e8d9-428a-819b-ad81082402ee)
 
 
+```
+
+columns_list=list(new_data.columns)
+print(columns_list)
+
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/b2c13343-924d-456b-b671-57e759fbbe3e)
 
 
+```
 
 
+features=list(set(columns_list)-set(['SalStat']))
+print(features)
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/28c1db26-10bf-4fd4-8fa3-6e4263d267ed)
 
 
+```
+y=new_data['SalStat'].values
+print(y)
+
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/0acbdf6b-edc4-41ff-bceb-18c3e5d8dade)
 
 
+```
+
+x=new_data[features].values
+print(x)
+
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/28ef6da4-d912-4506-882f-b6296186f04c)
 
 
+```
+
+train_x,test_x,train_y,test_y=train_test_split(x,y,test_size=0.3,random_state=0)
+
+KNN_classifier=KNeighborsClassifier(n_neighbors = 5)
+
+KNN_classifier.fit(train_x,train_y)
+```
 
 
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/bf06e4d1-df44-4bb1-ba86-d980318427cc)
 
 
+```
+
+prediction=KNN_classifier.predict(test_x)
+
+confusionMatrix=confusion_matrix(test_y, prediction)
+print(confusionMatrix)
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/78d3191b-60a0-41bd-ac5d-67ab34903624)
 
 
+````
+
+accuracy_score=accuracy_score(test_y,prediction)
+print(accuracy_score)
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/1e49508b-dcf6-4117-81db-63429621690c)
 
 
+```
+
+print("Misclassified Samples : %d" % (test_y !=prediction).sum())
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/e98d96d8-ffed-4cbc-b4bc-8172e87ac773)
 
 
-     
+```
+
+data.shape
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/8c413662-aabf-4deb-bfd9-414691f3c6be)
+
+
+```
+
+
+import pandas as pd
+from sklearn.feature_selection import SelectKBest, mutual_info_classif, f_classif
+data={
+    'Feature1': [1,2,3,4,5],
+    'Feature2': ['A','B','C','A','B'],
+    'Feature3': [0,1,1,0,1],
+    'Target'  : [0,1,1,0,1]
+}
+
+df=pd.DataFrame(data)
+x=df[['Feature1','Feature3']]
+y=df[['Target']]
+
+selector=SelectKBest(score_func=mutual_info_classif,k=1)
+x_new=selector.fit_transform(x,y)
+
+selected_feature_indices=selector.get_support(indices=True)
+
+selected_features=x.columns[selected_feature_indices]
+print("Selected Features:")
+print(selected_features)
+
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/3404837d-1531-43c6-8b3c-21689651877c)
+
+
+```
+
+import pandas as pd
+import numpy as np
+from scipy.stats import chi2_contingency
+
+import seaborn as sns
+tips=sns.load_dataset('tips')
+tips.head()
+
+```
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/32dea7f3-4631-4a37-aae9-ecddda0e5865)
+
+
+```
+tips.time.unique()
+```
+
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/448346e7-624d-4f34-b73e-b0e6c7a18ac1)
+
+
+```
+
+contingency_table=pd.crosstab(tips['sex'],tips['time'])
+print(contingency_table)
+
+```
+
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/cc1bba00-61e8-494e-bc76-a1da820a66cb)
+
+
+```
+
+chi2,p,_,_=chi2_contingency(contingency_table)
+print(f"Chi-Square Statistics: {chi2}")
+print(f"P-Value: {p}")
+
+```
+
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/a6b3ad61-0a79-42d7-a281-e196f643fbe2)
+    
 # RESULT:
        # INCLUDE YOUR RESULT HERE
