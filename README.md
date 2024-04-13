@@ -40,6 +40,7 @@ data
 ```
 
 ```
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/09cec392-423e-4d11-ac94-d9ff0a36a502)
 
 
 ```
