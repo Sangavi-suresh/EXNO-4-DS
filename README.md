@@ -24,6 +24,69 @@ The feature selection techniques used are:
 3.Embedded Method
 
 # CODING AND OUTPUT:
-       # INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
+
+```
+import pandas as pd
+import numpy as np
+import seaborn as sns
+
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+data=pd.read_csv("/content/income(1) (1).csv",na_values=[ " ?"])
+data
+
+```
+
+```
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/c7627e8a-e788-44f3-840e-d8168bac1693)
+
+```
+
+```
+
+data.isnull().sum()
+
+```
+
+```
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/e35a841d-6b21-4020-884f-80d08988b8ae)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 # RESULT:
        # INCLUDE YOUR RESULT HERE
