@@ -227,12 +227,17 @@ tips.head()
 
 
 
+tips.time.unique()
+
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/7e5c62e7-18b7-4194-963e-5e1808815d72)
 
 
 
+contingency_table=pd.crosstab(tips['sex'],tips['time'])
+print(contingency_table)
 
 
-
+![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/61e3bebe-1ff1-4991-b4d1-2e462d4916b2)
 
 
 
