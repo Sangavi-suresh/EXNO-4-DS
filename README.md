@@ -185,7 +185,7 @@ data.shape
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/59090e8d-a449-48ed-9ce3-1c32358c7096)
 
 
-
+```
 import pandas as pd
 from sklearn.feature_selection import SelectKBest, mutual_info_classif, f_classif
 data={
@@ -207,6 +207,8 @@ selected_feature_indices=selector.get_support(indices=True)
 selected_features=x.columns[selected_feature_indices]
 print("Selected Features:")
 print(selected_features)
+
+```
 
 ![image](https://github.com/Sangavi-suresh/EXNO-4-DS/assets/118541861/1eda0745-57f9-4efd-9b7c-fd4cf1dd052d)
 
